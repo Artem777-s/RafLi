@@ -92,7 +92,7 @@ body {
 }
 
 .logo-subtitle {
-    font-size: 12px;
+    font-size: 20px;
     text-transform: uppercase;
     color: var(--text-muted);
 }
