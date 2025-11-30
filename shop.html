@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>RafLi Pet Travel — Магазин</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header class="site-header">
+    <div class="container header-inner">
+        <a href="index.html" class="logo-wrap">
+            <img src="img/logo-rafli.jpg" alt="Логотип RafLi" class="logo-img">
+            <div class="logo-text">
+                <span class="logo-title">Раф Ли</span>
+                <span class="logo-subtitle">Pet Travel</span>
+            </div>
+        </a>
+        <nav class="main-nav">
+            <a href="index.html">Главная</a>
+            <a href="registration.html">Регистрация питомца</a>
+            <a href="shop.html" class="active">Магазин</a>
+            <a href="guides.html">Гайды</a>
+            <a href="events.html">Мероприятия</a>
+            <a href="https://t.me/RafLiTravel_BOT" target="_blank">Обратная связь</a>
+        </nav>
+    </div>
+</header>
+
+<main class="page-bg">
+    <section class="container mt-xl">
+        <div class="page-header">
+            <div>
+                <h1 class="page-title">Магазин товаров для путешествий</h1>
+                <p class="muted">
+                    Премиальные аксессуары, лежанки и наборы для поездок с питомцем. Это учебная витрина.
+                    Для заказа и генерации QR-кода для жетона переходите в Telegram-бот.
+                </p>
+            </div>
+            <a class="btn outline" href="https://t.me/RafLiTravel_BOT" target="_blank">Заказать через бота</a>
+        </div>
+
+        <div id="products-grid" class="products-grid">
+            <!-- товары генерируются через JS -->
+        </div>
+    </section>
+
+    <section class="container mt-xl">
+        <div class="card glass">
+            <h2>Администрирование каталога</h2>
+            <p class="muted">
+                Раздел для администратора. В демо используется простой пароль, чтобы добавлять новые товары
+                и фотографии. Данные хранятся в localStorage вашего браузера.
+            </p>
+
+            <form id="admin-login-form" class="form inline">
+                <div class="form-group">
+                    <label for="adminPassword">Пароль администратора</label>
+                    <input type="password" id="adminPassword" placeholder="Введите пароль">
+                </div>
+                <button type="submit" class="btn outline">Войти как администратор</button>
+                <p class="form-message" id="adminLoginMessage"></p>
+            </form>
+
+            <div id="admin-panel" class="hidden mt-md">
+                <h3 class="form-block-title">Добавить новый товар</h3>
+                <form id="add-product-form" class="form">
+                    <div class="form-group">
+                        <label for="productName">Название товара</label>
+                        <input id="productName" type="text" required
+                               value="Переносная лежанка RafLi (беж)">
+                    </div>
+                    <div class="form-group">
+                        <label for="productPrice">Цена</label>
+                        <input id="productPrice" type="text" required value="5 990 ₽">
+                    </div>
+                    <div class="form-group">
+                        <label for="productDescription">Описание товара</label>
+                        <textarea id="productDescription" rows="5" required>Переносная лежанка с антислип покрытием и мягким антивандальным велюром в бежевом цвете. 
+Продумана до мелочей и будет хорошим помощником в путешествиях: не скользит, легко очищается, компактно складывается и дарит хвостику крепкий сон.</textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="productImage">Фото товара</label>
+                        <input id="productImage" type="file" accept="image/*">
+                        <small class="muted">
+                            Фото сохранится только в вашем браузере (localStorage). Для реального магазина изображения
+                            нужно добавить в папку <code>img/</code> репозитория.
+                        </small>
+                    </div>
+                    <button type="submit" class="btn primary">Добавить товар в каталог</button>
+                    <p class="form-message" id="addProductMessage"></p>
+                </form>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer class="site-footer">
+    <div class="container footer-inner">
+        <span>© 2025 RafLi Pet Travel</span>
+        <a href="https://t.me/rafli_pettravel" target="_blank">Telegram-канал @rafli_pettravel</a>
+    </div>
+</footer>
+
+<script src="js/app.js"></script>
+</body>
+</html>
